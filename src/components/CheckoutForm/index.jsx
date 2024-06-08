@@ -6,7 +6,7 @@ import axios from 'axios';
 import $api from '@/api/http';
 import { toast } from 'react-toastify';
 
-const CheckoutForm = ({ id, amount, tour }) => {
+const CheckoutForm = ({ id, sum, amount, tour }) => {
   const stripe = useStripe();
   const elements = useElements();
   const [errorMessage, setErrorMessage] = useState(null);
@@ -37,13 +37,8 @@ const CheckoutForm = ({ id, amount, tour }) => {
         return;
       }
 
-      // Create a PaymentIntent
       const response = await $api.post("/booked-tour", {
-        // currency: "usd",
-        // isRefund: false,
-        // endDate: "2024-10-12",
-        // amount: amount,
-        // product: id,
+        sum: sum * 100,
         amount: amount,
         tour: id,
         user: Number(localStorage.getItem("key"))

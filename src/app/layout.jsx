@@ -36,7 +36,11 @@ export default function RootLayout({ children }) {
         <ToastContainer />
         <Footer />
       </body>
-      <GoogleAnalytics gaId="G-3S6ZYM7VP6" />
+      <GoogleAnalytics gaId="G-VQBBLZMY13" />
     </html>
   );
+
+
 }
+
+// выаыврпо
